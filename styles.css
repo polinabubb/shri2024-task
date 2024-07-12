@@ -457,7 +457,7 @@ html, body {
     background-position: 50% 50%;
     background-size: contain;
 }
-
+/*
 .event__icon_temp {
     background-image: url(assets/icon_temperature.svg);
 }
@@ -477,7 +477,7 @@ html, body {
 .event__icon_schedule {
     background-image: url(assets/icon_scheduled.svg);
 }
-
+ */
 .event__title {
     margin: 0;
     font-size: 0.875rem;
