@@ -391,57 +391,16 @@
    * Convenience component with default shallow equality check for sCU.
    */
 
-  function PureComponent(props, context, updater) {
-    this.props = props;
-    this.context = context; // If a component has string refs, we will assign a different object later.
 
-    this.refs = emptyObject;
-    this.updater = updater || ReactNoopUpdateQueue;
-  }
-
-  var pureComponentPrototype = PureComponent.prototype = new ComponentDummy();
-  pureComponentPrototype.constructor = PureComponent; // Avoid an extra prototype jump for these methods.
-
-  assign(pureComponentPrototype, Component.prototype);
-  pureComponentPrototype.isPureReactComponent = true;
 
   // an immutable object with a single mutable value
-  function createRef() {
-    var refObject = {
-      current: null
-    };
 
-    {
-      Object.seal(refObject);
-    }
-
-    return refObject;
-  }
 
   var isArrayImpl = Array.isArray; // eslint-disable-next-line no-redeclare
 
   function isArray(a) {
     return isArrayImpl(a);
   }
-
-  /*
-   * The `'' + value` pattern (used in in perf-sensitive code) throws for Symbol
-   * and Temporal.* types. See https://github.com/facebook/react/pull/22064.
-   *
-   * The functions in this module will throw an easier-to-understand,
-   * easier-to-debug exception with a clear errors message message explaining the
-   * problem. (Instead of a confusing exception thrown inside the implementation
-   * of the `value` object).
-   */
-  // $FlowFixMe only called in DEV, so void return is not possible.
-  function typeName(value) {
-    {
-      // toStringTag is needed for namespaced types like Temporal.Instant
-      var hasToStringTag = typeof Symbol === 'function' && Symbol.toStringTag;
-      var type = hasToStringTag && value[Symbol.toStringTag] || value.constructor.name || 'Object';
-      return type;
-    }
-  } // $FlowFixMe only called in DEV, so void return is not possible.
 
 
   function willCoercionThrow(value) {
@@ -489,106 +448,6 @@
         return testStringCoercion(value); // throw (to help callers find troubleshooting comments)
       }
     }
-  }
-
-  function getWrappedName(outerType, innerType, wrapperName) {
-    var displayName = outerType.displayName;
-
-    if (displayName) {
-      return displayName;
-    }
-
-    var functionName = innerType.displayName || innerType.name || '';
-    return functionName !== '' ? wrapperName + "(" + functionName + ")" : wrapperName;
-  } // Keep in sync with react-reconciler/getComponentNameFromFiber
-
-
-  function getContextName(type) {
-    return type.displayName || 'Context';
-  } // Note that the reconciler package should generally prefer to use getComponentNameFromFiber() instead.
-
-
-  function getComponentNameFromType(type) {
-    if (type == null) {
-      // Host root, text node or just invalid type.
-      return null;
-    }
-
-    {
-      if (typeof type.tag === 'number') {
-        error('Received an unexpected object in getComponentNameFromType(). ' + 'This is likely a bug in React. Please file an issue.');
-      }
-    }
-
-    if (typeof type === 'function') {
-      return type.displayName || type.name || null;
-    }
-
-    if (typeof type === 'string') {
-      return type;
-    }
-
-    switch (type) {
-      case REACT_FRAGMENT_TYPE:
-        return 'Fragment';
-
-      case REACT_PORTAL_TYPE:
-        return 'Portal';
-
-      case REACT_PROFILER_TYPE:
-        return 'Profiler';
-
-      case REACT_STRICT_MODE_TYPE:
-        return 'StrictMode';
-
-      case REACT_SUSPENSE_TYPE:
-        return 'Suspense';
-
-      case REACT_SUSPENSE_LIST_TYPE:
-        return 'SuspenseList';
-
-    }
-
-    if (typeof type === 'object') {
-      switch (type.$$typeof) {
-        case REACT_CONTEXT_TYPE:
-          var context = type;
-          return getContextName(context) + '.Consumer';
-
-        case REACT_PROVIDER_TYPE:
-          var provider = type;
-          return getContextName(provider._context) + '.Provider';
-
-        case REACT_FORWARD_REF_TYPE:
-          return getWrappedName(type, type.render, 'ForwardRef');
-
-        case REACT_MEMO_TYPE:
-          var outerName = type.displayName || null;
-
-          if (outerName !== null) {
-            return outerName;
-          }
-
-          return getComponentNameFromType(type.type) || 'Memo';
-
-        case REACT_LAZY_TYPE:
-          {
-            var lazyComponent = type;
-            var payload = lazyComponent._payload;
-            var init = lazyComponent._init;
-
-            try {
-              return getComponentNameFromType(init(payload));
-            } catch (x) {
-              return null;
-            }
-          }
-
-        // eslint-disable-next-line no-fallthrough
-      }
-    }
-
-    return null;
   }
 
   var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -3259,7 +3118,6 @@
   exports.Component = Component;
   exports.Fragment = REACT_FRAGMENT_TYPE;
   exports.Profiler = REACT_PROFILER_TYPE;
-  exports.PureComponent = PureComponent;
   exports.StrictMode = REACT_STRICT_MODE_TYPE;
   exports.Suspense = REACT_SUSPENSE_TYPE;
   exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals$1;
@@ -3267,7 +3125,6 @@
   exports.createContext = createContext;
   exports.createElement = createElement$1;
   exports.createFactory = createFactory;
-  exports.createRef = createRef;
   exports.forwardRef = forwardRef;
   exports.isValidElement = isValidElement;
   exports.lazy = lazy;

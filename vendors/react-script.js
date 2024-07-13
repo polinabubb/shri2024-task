@@ -213,7 +213,7 @@ function Main() {
     return <main className="main">
         <section className="section main__general">
             <h2 className="section__title section__title-header section__main-title">Главное</h2>
-            <div className="hero-dashboard" rel="preload" as="image" loading="lazy">
+            <div rel="preload" className="hero-dashboard" loading="lazy">
                 <div className="hero-dashboard__primary">
                     <h3 className="hero-dashboard__title">Привет, Геннадий!</h3>
                     <p className="hero-dashboard__subtitle">Двери и окна закрыты, сигнализация включена.</p>
@@ -232,7 +232,7 @@ function Main() {
                                 <span className="a11y-hidden">°</span>
 
                                 <div loading="lazy"
-                                     rel="preload" as="image"
+                                     rel="preload" as="image" loading="lazy"
                                      className="hero-dashboard__icon hero-dashboard__icon_rain"
                                      role="img"
                                      aria-label="Дождь"
@@ -309,7 +309,7 @@ function Main() {
                 </h2>
 
                 <label>
-                    <select className="section__select" defaultValue="all" onInput={onSelectInput} rel="preload" as="image" loading="lazy">
+                    <select className="section__select" defaultValue="all" onInput={onSelectInput} loading="lazy" rel="preload" as="image" loading="lazy">
                         {TABS_KEYS.map(key =>
                             <option key={key} value={key}>
                                 {TABS[key].title}
