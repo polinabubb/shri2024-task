@@ -91,9 +91,7 @@
   var ReactDebugCurrentFrame = {};
   var currentExtraStackFrame = null;
   function setExtraStackFrame(stack) {
-    {
-      currentExtraStackFrame = stack;
-    }
+    //{currentExtraStackFrame = stack; }
   }
 
   {
