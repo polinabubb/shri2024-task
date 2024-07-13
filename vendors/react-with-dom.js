@@ -34,6 +34,7 @@
   var REACT_OFFSCREEN_TYPE = Symbol.for('react.offscreen');
   var MAYBE_ITERATOR_SYMBOL = Symbol.iterator;
   var FAUX_ITERATOR_SYMBOL = '@@iterator';
+
   function getIteratorFn(maybeIterable) {
     if (maybeIterable === null || typeof maybeIterable !== 'object') {
       return null;
@@ -47,6 +48,8 @@
 
     return null;
   }
+
+
 
   /**
    * Keeps track of the current dispatcher.
@@ -90,16 +93,22 @@
 
   var ReactDebugCurrentFrame = {};
   var currentExtraStackFrame = null;
+  /*
   function setExtraStackFrame(stack) {
-    //{currentExtraStackFrame = stack; }
+    {currentExtraStackFrame = stack; }
   }
 
+   */
+
   {
+      /*
     ReactDebugCurrentFrame.setExtraStackFrame = function (stack) {
       {
         currentExtraStackFrame = stack;
       }
     }; // Stack implementation injected by the current renderer.
+
+       */
 
 
     ReactDebugCurrentFrame.getCurrentStack = null;
@@ -2012,9 +2021,9 @@
       if (element) {
         var owner = element._owner;
         var stack = describeUnknownElementTypeFrameInDEV(element.type, element._source, owner ? owner.type : null);
-        ReactDebugCurrentFrame$1.setExtraStackFrame(stack);
+        //ReactDebugCurrentFrame$1.setExtraStackFrame(stack);
       } else {
-        ReactDebugCurrentFrame$1.setExtraStackFrame(null);
+        //ReactDebugCurrentFrame$1.setExtraStackFrame(null);
       }
     }
   }
@@ -2073,9 +2082,9 @@
       if (element) {
         var owner = element._owner;
         var stack = describeUnknownElementTypeFrameInDEV(element.type, element._source, owner ? owner.type : null);
-        setExtraStackFrame(stack);
+       // setExtraStackFrame(stack);
       } else {
-        setExtraStackFrame(null);
+       // setExtraStackFrame(null);
       }
     }
   }
@@ -14998,9 +15007,9 @@
       if (element) {
         var owner = element._owner;
         var stack = describeUnknownElementTypeFrameInDEV(element.type, element._source, owner ? owner.type : null);
-        ReactDebugCurrentFrame$1.setExtraStackFrame(stack);
+        //ReactDebugCurrentFrame$1.setExtraStackFrame(stack);
       } else {
-        ReactDebugCurrentFrame$1.setExtraStackFrame(null);
+       // ReactDebugCurrentFrame$1.setExtraStackFrame(null);
       }
     }
   }
