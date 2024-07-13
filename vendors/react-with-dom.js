@@ -7706,68 +7706,68 @@
 
   // Don't change these two values. They're used by React Dev Tools.
   var NoFlags =
-  /*                      */
+
   0;
   var PerformedWork =
-  /*                */
+
   1; // You can change the rest (and add more).
 
   var Placement =
-  /*                    */
+
   2;
   var Update =
-  /*                       */
+
   4;
   var ChildDeletion =
-  /*                */
+
   16;
   var ContentReset =
-  /*                 */
+
   32;
   var Callback =
-  /*                     */
+
   64;
   var DidCapture =
-  /*                   */
+
   128;
   var ForceClientRender =
-  /*            */
+
   256;
   var Ref =
-  /*                          */
+
   512;
   var Snapshot =
-  /*                     */
+
   1024;
   var Passive =
-  /*                      */
+
   2048;
   var Hydrating =
-  /*                    */
+
   4096;
   var Visibility =
-  /*                   */
+
   8192;
   var StoreConsistency =
-  /*             */
+
   16384;
   var LifecycleEffectMask = Passive | Update | Callback | Ref | Snapshot | StoreConsistency; // Union of all commit flags (flags with the lifetime of a particular commit)
 
   var HostEffectMask =
-  /*               */
+
   32767; // These are not really side effects, but we still reuse this field.
 
   var Incomplete =
-  /*                   */
+
   32768;
   var ShouldCapture =
-  /*                */
+
   65536;
   var ForceUpdateForLegacySuspense =
-  /* */
+
   131072;
   var Forked =
-  /*                       */
+
   1048576; // Static tags describe aspects of a fiber that are not specific to a render,
   // e.g. a fiber uses a passive effect (even if there are no updates on this particular render).
   // This enables us to defer more work in the unmount case,
@@ -7775,22 +7775,22 @@
   // and instead rely on the static flag as a signal that there may be cleanup work.
 
   var RefStatic =
-  /*                    */
+
   2097152;
   var LayoutStatic =
-  /*                 */
+
   4194304;
   var PassiveStatic =
-  /*                */
+
   8388608; // These flags allow us to traverse to fibers that have effects on mount
   // without traversing the entire tree after every commit for
   // double invoking
 
   var MountLayoutDev =
-  /*               */
+
   16777216;
   var MountPassiveDev =
-  /*              */
+
   33554432; // Groups of flags that are used in the commit phase to skip over trees that
   // don't contain effects, by checking subtreeFlags.
 
@@ -8492,20 +8492,18 @@
   }
 
   var NoMode =
-  /*                         */
+
   0; // TODO: Remove ConcurrentMode by reading from the root tag instead
 
-  var ConcurrentMode =
-  /*                 */
-  1;
+  var ConcurrentMode = 1;
   var ProfileMode =
-  /*                    */
+
   2;
   var StrictLegacyMode =
-  /*               */
+
   8;
   var StrictEffectsMode =
-  /*              */
+
   16;
 
   // TODO: This is pretty well supported by browsers. Maybe we can drop it.
@@ -8572,71 +8570,71 @@
   /*                        */
   1024;
   var TransitionLane6 =
-  /*                        */
+
   2048;
   var TransitionLane7 =
-  /*                        */
+
   4096;
   var TransitionLane8 =
-  /*                        */
+
   8192;
   var TransitionLane9 =
-  /*                        */
+
   16384;
   var TransitionLane10 =
-  /*                       */
+
   32768;
   var TransitionLane11 =
-  /*                       */
+
   65536;
   var TransitionLane12 =
-  /*                       */
+
   131072;
   var TransitionLane13 =
-  /*                       */
+
   262144;
   var TransitionLane14 =
-  /*                       */
+
   524288;
   var TransitionLane15 =
-  /*                       */
+
   1048576;
   var TransitionLane16 =
-  /*                       */
+
   2097152;
   var RetryLanes =
-  /*                            */
+
   130023424;
   var RetryLane1 =
-  /*                             */
+
   4194304;
   var RetryLane2 =
-  /*                             */
+
   8388608;
   var RetryLane3 =
-  /*                             */
+
   16777216;
   var RetryLane4 =
-  /*                             */
+
   33554432;
   var RetryLane5 =
-  /*                             */
+
   67108864;
   var SomeRetryLane = RetryLane1;
   var SelectiveHydrationLane =
-  /*          */
+
   134217728;
   var NonIdleLanes =
-  /*                          */
+
   268435455;
   var IdleHydrationLane =
-  /*               */
+
   268435456;
   var IdleLane =
-  /*                        */
+
   536870912;
   var OffscreenLane =
-  /*                   */
+
   1073741824; // This function is used for the experimental timeline (react-devtools-timeline)
   // It should be kept in sync with the Lanes values above.
 
@@ -14668,7 +14666,6 @@
     precacheFiberNode(internalInstanceHandle, textInstance); // TODO: Temporary hack to check if we're in a concurrent root. We can delete
     // when the legacy root API is removed.
 
-    var isConcurrentMode = (internalInstanceHandle.mode & ConcurrentMode) !== NoMode;
     return diffHydratedText(textInstance, text);
   }
   function hydrateSuspenseInstance(suspenseInstance, internalInstanceHandle) {
@@ -15000,7 +14997,7 @@
   }
 
   var loggedTypeFailures = {};
-  var ReactDebugCurrentFrame$1 = ReactSharedInternals.ReactDebugCurrentFrame;
+  //var ReactDebugCurrentFrame$1 = ReactSharedInternals.ReactDebugCurrentFrame;
 
   function setCurrentlyValidatingElement(element) {
     {
@@ -19418,21 +19415,21 @@
   }
 
   var NoFlags$1 =
-  /*   */
+
   0; // Represents whether effect should fire.
 
   var HasEffect =
-  /* */
+
   1; // Represents the phase in which the effect (not the clean-up) fires.
 
   var Insertion =
-  /*  */
+
   2;
   var Layout =
-  /*    */
+
   4;
   var Passive$1 =
-  /*   */
+
   8;
 
   // and should be reset before starting a new render.
@@ -28629,16 +28626,16 @@
       ReactCurrentBatchConfig$3 = ReactSharedInternals.ReactCurrentBatchConfig,
       ReactCurrentActQueue$1 = ReactSharedInternals.ReactCurrentActQueue;
   var NoContext =
-  /*             */
+
   0;
   var BatchedContext =
-  /*               */
+
   1;
   var RenderContext =
-  /*                */
+
   2;
   var CommitContext =
-  /*                */
+
   4;
   var RootInProgress = 0;
   var RootFatalErrored = 1;
