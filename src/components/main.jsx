@@ -14,7 +14,7 @@ export function Main() {
             initedRef.current = true;
             setActiveTab(new URLSearchParams(window.location.search).get('tab') || 'all');
         }
-    });
+    },[setActiveTab, activeTab]);
 
     const onSelectInput = (event) => {
         setActiveTab(event.target.value);
@@ -34,7 +34,7 @@ export function Main() {
             }
         }
 
-    });
+    }, );
 
     const onArrowCLick = () => {
         if (ref.current){
