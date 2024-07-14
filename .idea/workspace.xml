@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bb90b52-f7b2-455b-b389-d8c1fbfa7f72" name="Changes" comment="" />
+    <list default="true" id="0bb90b52-f7b2-455b-b389-d8c1fbfa7f72" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.0c3afe47.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.0c3afe47.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.0c3afe47.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.0c3afe47.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.e402f90b.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.e402f90b.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.e402f90b.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.e402f90b.js.LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.e402f90b.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.e402f90b.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/arrow-down.d655218a2b02d5911247.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/arrow-down.d655218a2b02d5911247.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/arrow-left.1f36965091855956849d.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/arrow-left.1f36965091855956849d.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/bg@2x.86f35448ef3226b5b7e4.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/bg@2x.86f35448ef3226b5b7e4.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/cloud-drizzle.96d177798e471cc2c056.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/cloud-drizzle.96d177798e471cc2c056.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/icon_list_m@1x.2c481f94300218fcebd0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/icon_list_m@1x.2c481f94300218fcebd0.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/icon_scheduled.71bbb008775a1c81db81.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/icon_scheduled.71bbb008775a1c81db81.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/icon_sun.ab45bd1abea4a81765bb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/icon_sun.ab45bd1abea4a81765bb.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/icon_sun_2.f1c80687f8b99c25c4c9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/icon_sun_2.f1c80687f8b99c25c4c9.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/icon_temperature.0d19e216b2d5b7971f85.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/icon_temperature.0d19e216b2d5b7971f85.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/icon_temperature_2.b61801258e48a97351d6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/icon_temperature_2.b61801258e48a97351d6.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/logo.fbf3825fdaeb5d79fbbe.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/logo.fbf3825fdaeb5d79fbbe.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,19 +50,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/polinka/book-catalog/shri2024-task/public",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\polinka\\book-catalog\\shri2024-task\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/polinka/book-catalog/shri2024-task/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\polinka\\book-catalog\\shri2024-task\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\polinka\book-catalog\shri2024-task\public" />
@@ -71,6 +91,7 @@
       <workItem from="1720792788903" duration="17382000" />
       <workItem from="1720893937322" duration="21106000" />
       <workItem from="1720953495468" duration="6743000" />
+      <workItem from="1720983243984" duration="348000" />
     </task>
     <servers />
   </component>
