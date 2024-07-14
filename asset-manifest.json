@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/shri2024-task/static/css/main.0c3afe47.css",
+    "main.css": "/shri2024-task/static/css/main.5c85f4f3.css",
     "main.js": "/shri2024-task/static/js/main.3223872e.js",
     "static/media/bg@2x.webp": "/shri2024-task/static/media/bg@2x.86f35448ef3226b5b7e4.webp",
+    "static/media/image.webp": "/shri2024-task/static/media/image.6449356341e040cc1c60.webp",
     "static/media/icon_sun.svg": "/shri2024-task/static/media/icon_sun.ab45bd1abea4a81765bb.svg",
     "static/media/arrow-down.svg": "/shri2024-task/static/media/arrow-down.d655218a2b02d5911247.svg",
     "static/media/icon_sun_2.svg": "/shri2024-task/static/media/icon_sun_2.f1c80687f8b99c25c4c9.svg",
@@ -14,11 +15,11 @@
     "static/media/icon_scheduled.svg": "/shri2024-task/static/media/icon_scheduled.71bbb008775a1c81db81.svg",
     "index.html": "/shri2024-task/index.html",
     "static/media/arrow-left.webp": "/shri2024-task/static/media/arrow-left.1f36965091855956849d.webp",
-    "main.0c3afe47.css.map": "/shri2024-task/static/css/main.0c3afe47.css.map",
+    "main.5c85f4f3.css.map": "/shri2024-task/static/css/main.5c85f4f3.css.map",
     "main.3223872e.js.map": "/shri2024-task/static/js/main.3223872e.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c3afe47.css",
+    "static/css/main.5c85f4f3.css",
     "static/js/main.3223872e.js"
   ]
 }
