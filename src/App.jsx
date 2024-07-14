@@ -1,16 +1,15 @@
 import {Header} from './components/header';
 import {Main} from './components/main';
 import Footer from "./components/footer";
+import React from 'react';
 
-export function App(): JSX.Element {
+export function App(){
 //<html lang="ru">  <div id="app"></div>
     return (
         <>
             <Header/>
             <Main/>
             <Footer/>
-            <script src="../vendors/babel.min.js"></script>
-            <script type="text/babel"></script>
         </>
     );
 }

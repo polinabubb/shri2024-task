@@ -1,9 +1,10 @@
+import React from 'react';
 import {useState, useRef, useEffect} from 'react';
 import {TABS_KEYS, TABS} from '../const';
 import {Event} from './event';
 
-export function Main(): JSX.Element {
-    const ref = useRef<HTMLDivElement>();
+export function Main() {
+    const ref = useRef(null);
     const initedRef = useRef(false);
     const [activeTab, setActiveTab] = useState('');
     const [hasRightScroll, setHasRightScroll] = useState(false);
@@ -15,32 +16,37 @@ export function Main(): JSX.Element {
         }
     });
 
-    const onSelectInput = event => {
+    const onSelectInput = (event) => {
         setActiveTab(event.target.value);
     };
 
     let sizes = [];
-    const onSize = size => {
+    const onSize = (size) => {
         sizes = [...sizes, size];
     };
 
     useEffect(() => {
         const sumWidth = sizes.reduce((acc, item) => acc + item.width, 0);
-
-        const newHasRightScroll = sumWidth > ref.current.offsetWidth;
-        if (newHasRightScroll !== hasRightScroll) {
-            setHasRightScroll(newHasRightScroll);
+        if (ref.current){
+            const newHasRightScroll = sumWidth > ref.current.offsetWidth;
+            if (newHasRightScroll !== hasRightScroll) {
+                setHasRightScroll(newHasRightScroll);
+            }
         }
+
     });
 
     const onArrowCLick = () => {
-        const scroller = ref.current.querySelector('.section__panel:not(.section__panel_hidden)');
-        if (scroller) {
-            scroller.scrollTo({
-                left: scroller.scrollLeft + 400,
-                behavior: 'smooth'
-            });
+        if (ref.current){
+            const scroller = ref.current.querySelector('.section__panel:not(.section__panel_hidden)');
+            if (scroller) {
+                scroller.scrollTo({
+                    left: scroller.scrollLeft + 400,
+                    behavior: 'smooth'
+                });
+            }
         }
+
     };
 
     return (

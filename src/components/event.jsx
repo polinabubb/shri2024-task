@@ -1,7 +1,8 @@
+import React from 'react';
 import {useRef, useEffect} from 'react';
 
-export function Event(props): JSX.Element {
-    const ref = useRef<HTMLLIElement>();
+export function Event(props) {
+    const ref = useRef(null);
 
     const { onSize } = props;
 

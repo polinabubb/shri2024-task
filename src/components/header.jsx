@@ -1,6 +1,8 @@
+import React from 'react';
 import {useState} from 'react';
+import {Link} from "react-router-dom";
 
-export function Header(): JSX.Element {
+export function Header(){
     let [expanded, setExpanded] = useState(false);
     let [toggled, setToggled] = useState(false);
 
@@ -13,7 +15,7 @@ export function Header(): JSX.Element {
     };
     return (
         <header className="header">
-            <a href="/" className="header__logo" aria-label="Яндекс.Дом" rel="preload"></a>
+            <Link to="/" className="header__logo" aria-label="Яндекс.Дом" rel="preload"></Link>
             <button className="header__menu" aria-expanded={expanded ? 'true' : 'false'} onClick={onClick} rel="preload"
             >
                 <span className="header__menu-text a11y-hidden">
@@ -22,13 +24,13 @@ export function Header(): JSX.Element {
             </button>
             <ul className={'header__links' + (expanded ? ' header__links_opened' : '') + (toggled ? ' header__links-toggled' : '')}>
                 <li className="header__item">
-                    <a className="header__link header__link_current" href="/" aria-current="page">Сводка</a>
+                    <Link className="header__link header__link_current" to="/" aria-current="page">Сводка</Link>
                 </li>
                 <li className="header__item">
-                    <a className="header__link" href="/devices">Устройства</a>
+                    <Link className="header__link" to="/devices">Устройства</Link>
                 </li>
                 <li className="header__item">
-                    <a className="header__link" href="/scripts">Сценарии</a>
+                    <Link className="header__link" to="/scripts">Сценарии</Link>
                 </li>
             </ul>
         </header>
