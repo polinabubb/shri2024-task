@@ -35,6 +35,21 @@
   var MAYBE_ITERATOR_SYMBOL = Symbol.iterator;
   var FAUX_ITERATOR_SYMBOL = '@@iterator';
 
+  function getIteratorFn(maybeIterable) {
+    if (maybeIterable === null || typeof maybeIterable !== 'object') {
+      return null;
+    }
+
+    var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
+
+    if (typeof maybeIterator === 'function') {
+      return maybeIterator;
+    }
+
+    return null;
+  }
+
+
 
   /**
    * Keeps track of the current dispatcher.
@@ -1081,9 +1096,32 @@
         subtreeCount += mapIntoArray(child, array, escapedPrefix, nextName, callback);
       }
     } else {
+      var iteratorFn = getIteratorFn(children);
 
-      if (type === 'object') {
+      if (typeof iteratorFn === 'function') {
+        var iterableChildren = children;
 
+        {
+          // Warn about using Maps as children
+          if (iteratorFn === iterableChildren.entries) {
+            if (!didWarnAboutMaps) {
+              warn('Using Maps as children is not supported. ' + 'Use an array of keyed ReactElements instead.');
+            }
+
+            didWarnAboutMaps = true;
+          }
+        }
+
+        var iterator = iteratorFn.call(iterableChildren);
+        var step;
+        var ii = 0;
+
+        while (!(step = iterator.next()).done) {
+          child = step.value;
+          nextName = nextNamePrefix + getElementKey(child, ii++);
+          subtreeCount += mapIntoArray(child, array, escapedPrefix, nextName, callback);
+        }
+      } else if (type === 'object') {
         // eslint-disable-next-line react-internal/safe-string-coercion
         var childrenString = String(children);
         throw new Error("Objects are not valid as a React child (found: " + (childrenString === '[object Object]' ? 'object with keys {' + Object.keys(children).join(', ') + '}' : childrenString) + "). " + 'If you meant to render a collection of children, use an array ' + 'instead.');
@@ -2180,6 +2218,23 @@
       // This element was passed in a valid location.
       if (node._store) {
         node._store.validated = true;
+      }
+    } else if (node) {
+      var iteratorFn = getIteratorFn(node);
+
+      if (typeof iteratorFn === 'function') {
+        // Entry iterators used to provide implicit keys,
+        // but now we print a separate warning for them later.
+        if (iteratorFn !== node.entries) {
+          var iterator = iteratorFn.call(node);
+          var step;
+
+          while (!(step = iterator.next()).done) {
+            if (isValidElement(step.value)) {
+              validateExplicitKey(step.value, parentType);
+            }
+          }
+        }
       }
     }
   }
@@ -4162,7 +4217,19 @@
   var REACT_TRACING_MARKER_TYPE = Symbol.for('react.tracing_marker');
   var MAYBE_ITERATOR_SYMBOL = Symbol.iterator;
   var FAUX_ITERATOR_SYMBOL = '@@iterator';
+  function getIteratorFn(maybeIterable) {
+    if (maybeIterable === null || typeof maybeIterable !== 'object') {
+      return null;
+    }
 
+    var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
+
+    if (typeof maybeIterator === 'function') {
+      return maybeIterator;
+    }
+
+    return null;
+  }
 
   var assign = Object.assign;
 
@@ -18418,7 +18485,7 @@
             }
         }
 
-        if (isArray(newChild)) {
+        if (isArray(newChild) || getIteratorFn(newChild)) {
           var _created3 = createFiberFromFragment(newChild, returnFiber.mode, lanes, null);
 
           _created3.return = returnFiber;
@@ -18480,7 +18547,7 @@
             }
         }
 
-        if (isArray(newChild)) {
+        if (isArray(newChild) || getIteratorFn(newChild)) {
           if (key !== null) {
             return null;
           }
@@ -18530,7 +18597,7 @@
             return updateFromMap(existingChildren, returnFiber, newIdx, init(payload), lanes);
         }
 
-        if (isArray(newChild) ) {
+        if (isArray(newChild) || getIteratorFn(newChild)) {
           var _matchedFiber3 = existingChildren.get(newIdx) || null;
 
           return updateFragment(returnFiber, _matchedFiber3, newChild, lanes, null);
@@ -18764,7 +18831,11 @@
     function reconcileChildrenIterator(returnFiber, currentFirstChild, newChildrenIterable, lanes) {
       // This is the same implementation as reconcileChildrenArray(),
       // but using the iterator instead.
+      var iteratorFn = getIteratorFn(newChildrenIterable);
 
+      if (typeof iteratorFn !== 'function') {
+        throw new Error('An object is not an iterable. This error is likely caused by a bug in ' + 'React. Please file an issue.');
+      }
 
       {
         // We don't support rendering Generators because it's a mutation.
@@ -19106,7 +19177,9 @@
           return reconcileChildrenArray(returnFiber, currentFirstChild, newChild, lanes);
         }
 
-
+        if (getIteratorFn(newChild)) {
+          return reconcileChildrenIterator(returnFiber, currentFirstChild, newChild, lanes);
+        }
 
         throwOnInvalidObjectType(returnFiber, newChild);
       }
@@ -24181,7 +24254,7 @@
   function validateSuspenseListNestedChild(childSlot, index) {
     {
       var isAnArray = isArray(childSlot);
-      var isIterable = !isAnArray;
+      var isIterable = !isAnArray && typeof getIteratorFn(childSlot) === 'function';
 
       if (isAnArray || isIterable) {
         var type = isAnArray ? 'array' : 'iterable';
@@ -24203,6 +24276,27 @@
             if (!validateSuspenseListNestedChild(children[i], i)) {
               return;
             }
+          }
+        } else {
+          var iteratorFn = getIteratorFn(children);
+
+          if (typeof iteratorFn === 'function') {
+            var childrenIterator = iteratorFn.call(children);
+
+            if (childrenIterator) {
+              var step = childrenIterator.next();
+              var _i = 0;
+
+              for (; !step.done; step = childrenIterator.next()) {
+                if (!validateSuspenseListNestedChild(step.value, _i)) {
+                  return;
+                }
+
+                _i++;
+              }
+            }
+          } else {
+            error('A single row was passed to a <SuspenseList revealOrder="%s" />. ' + 'This is not useful since it needs multiple rows. ' + 'Did you mean to pass multiple children or an array?', revealOrder);
           }
         }
       }
