@@ -5,25 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb90b52-f7b2-455b-b389-d8c1fbfa7f72" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/css/main.0c3afe47.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.0c3afe47.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/css/main.0c3afe47.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.0c3afe47.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.e402f90b.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.e402f90b.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.e402f90b.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.e402f90b.js.LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.e402f90b.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.e402f90b.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/arrow-down.d655218a2b02d5911247.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/arrow-down.d655218a2b02d5911247.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/arrow-left.1f36965091855956849d.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/arrow-left.1f36965091855956849d.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/bg@2x.86f35448ef3226b5b7e4.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/bg@2x.86f35448ef3226b5b7e4.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/cloud-drizzle.96d177798e471cc2c056.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/cloud-drizzle.96d177798e471cc2c056.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/icon_list_m@1x.2c481f94300218fcebd0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/icon_list_m@1x.2c481f94300218fcebd0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/icon_scheduled.71bbb008775a1c81db81.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/icon_scheduled.71bbb008775a1c81db81.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/icon_sun.ab45bd1abea4a81765bb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/icon_sun.ab45bd1abea4a81765bb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/icon_sun_2.f1c80687f8b99c25c4c9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/icon_sun_2.f1c80687f8b99c25c4c9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/icon_temperature.0d19e216b2d5b7971f85.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/icon_temperature.0d19e216b2d5b7971f85.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/icon_temperature_2.b61801258e48a97351d6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/icon_temperature_2.b61801258e48a97351d6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/logo.fbf3825fdaeb5d79fbbe.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/logo.fbf3825fdaeb5d79fbbe.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/main.fbd901a2.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.e402f90b.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.fbd901a2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.e402f90b.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.fbd901a2.js.LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.e402f90b.js.map" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
