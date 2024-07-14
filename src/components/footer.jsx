@@ -1,18 +1,23 @@
 import React from "react";
-import {Link} from "react-router-dom";
+//import {Link} from "react-router-dom";
 
 
 export function Footer(){
     return (
         <footer className="footer">
             <ul className="footer__list">
-                { ['Помощь', 'Обратная связь', 'Разработчикам', 'Условия использования'].map(text => {
-                    return (
-                        <li className="footer__item" key={text}>
-                            <Link className="footer__link" to="/">{text}</Link>
-                        </li>
-                    );
-                })}
+                <li className="footer__item">
+                    <a className="footer__link" href="/">Помощь</a>
+                </li>
+                <li className="footer__item" >
+                    <a className="footer__link" href="/">Обратная связь</a>
+                </li>
+                <li className="footer__item">
+                    <a className="footer__link" href="/">Разработчикам</a>
+                </li>
+                <li className="footer__item">
+                    <a className="footer__link" href="/">Условия использования</a>
+                </li>
             </ul>
             <div className="footer__copyright">
                 © 1997–2023 ООО «Яндекс»

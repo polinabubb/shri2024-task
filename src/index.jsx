@@ -4,7 +4,7 @@ import './styles.css';
 import {App} from './App';
 import {BrowserRouter} from 'react-router-dom';
 
-const node =  document.getElementById('root');
+const node =  document.getElementById('app');
 const root = ReactDOM.createRoot(node);
 
 
